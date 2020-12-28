@@ -23,7 +23,8 @@ CREATE TABLE role (
   title varchar(30) NOT NULL,
   salary DECIMAL(10,2) NULL,
   department_id int NOT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  FOREIGN KEY (department_id) REFERENCES department(id)
 );
 
 -- Create the Department table
