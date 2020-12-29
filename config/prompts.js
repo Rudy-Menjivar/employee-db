@@ -52,8 +52,8 @@ function viewAll(){
 };
 
 function viewAllbyDept(){
-    console.log("Under construction");
-    mainMenu();
+    query = "SELECT employee.id, employee.first_name, employee.last_name, role.title, department.department, role.salary, CONCAT(mgr.first_name, ' ' ,mgr.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left join employee mgr on employee.manager_id = mgr.id ORDER by department.department ASC"
+    renderResults();
 };
 
 function viewAllbyMgr(){
