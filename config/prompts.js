@@ -18,4 +18,29 @@ function mainMenu() {
         "Update Employee Manager"
     ]
   })
+  .then(function (answer) {
+    switch (answer.action) {
+      case "View All Employees":
+        console.log("Under construction");
+        break;
+      case "View All Employees by Department":
+        console.log("Under construction");
+        break;
+      case "View All Employees by Manager":
+        console.log("Under construction");
+        break;
+      case "Add Employee":
+        console.log("Under construction");
+        break;
+      case "Remove Employee":
+        console.log("Under construction");
+        break;
+      case "Update Employee Role":
+        console.log("Under construction");
+        break;
+      case "Update Employee Manager":
+        console.log("Under construction");
+        break;
+    }
+  });
 };
