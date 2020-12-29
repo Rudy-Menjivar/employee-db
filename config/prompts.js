@@ -21,7 +21,7 @@ function mainMenu() {
   .then(function (answer) {
     switch (answer.action) {
       case "View All Employees":
-        console.log("Under construction");
+        viewAll();
         break;
       case "View All Employees by Department":
         console.log("Under construction");
@@ -44,3 +44,8 @@ function mainMenu() {
     }
   });
 };
+
+function viewAll(){
+    console.log("Under construction");
+    mainMenu();
+}
