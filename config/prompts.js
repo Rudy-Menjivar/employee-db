@@ -24,22 +24,22 @@ function mainMenu() {
         viewAll();
         break;
       case "View All Employees by Department":
-        console.log("Under construction");
+        viewAllbyDept();
         break;
       case "View All Employees by Manager":
-        console.log("Under construction");
+        viewAllbyMgr();
         break;
       case "Add Employee":
-        console.log("Under construction");
+        addEmp();
         break;
       case "Remove Employee":
-        console.log("Under construction");
+        removeEmp();
         break;
       case "Update Employee Role":
-        console.log("Under construction");
+        updateEmpRole();
         break;
       case "Update Employee Manager":
-        console.log("Under construction");
+        updateEmpMgr();
         break;
     }
   });
@@ -48,4 +48,34 @@ function mainMenu() {
 function viewAll(){
     console.log("Under construction");
     mainMenu();
-}
+};
+
+function viewAllbyDept(){
+    console.log("Under construction");
+    mainMenu();
+};
+
+function viewAllbyMgr(){
+    console.log("Under construction");
+    mainMenu();
+};
+
+function addEmp(){
+    console.log("Under construction");
+    mainMenu();
+};
+
+function removeEmp(){
+    console.log("Under construction");
+    mainMenu();
+};
+
+function updateEmpRole(){
+    console.log("Under construction");
+    mainMenu();
+};
+
+function updateEmpMgr(){
+    console.log("Under construction");
+    mainMenu();
+};
