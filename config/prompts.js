@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 var connection = require("./connection.js");
+var query;
 
 mainMenu();
 
@@ -46,13 +47,8 @@ function mainMenu() {
 };
 
 function viewAll(){
-    var query = "SELECT employee.id, employee.first_name, employee.last_name, role.title, department.department, role.salary, CONCAT(mgr.first_name, ' ' ,mgr.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left join employee mgr on employee.manager_id = mgr.id ORDER by employee.id ASC"
-    connection.query(query, function(err, res) {
-        if (err) throw err;
-        console.table(res)
-        connection.end();
-        mainMenu();
-    })
+    query = "SELECT employee.id, employee.first_name, employee.last_name, role.title, department.department, role.salary, CONCAT(mgr.first_name, ' ' ,mgr.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left join employee mgr on employee.manager_id = mgr.id ORDER by employee.id ASC"
+    renderResults();
 };
 
 function viewAllbyDept(){
@@ -83,4 +79,12 @@ function updateEmpRole(){
 function updateEmpMgr(){
     console.log("Under construction");
     mainMenu();
+};
+
+function renderResults(){
+    connection.query(query, function(err, res) {
+        if (err) throw err;
+        console.table(res)
+        mainMenu();
+    })
 };
