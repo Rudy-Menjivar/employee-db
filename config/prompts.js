@@ -59,6 +59,10 @@ function viewAllbyDept(){
     renderResults();
 };
 
+function mgtList() {
+    empChoices.push(" -- Main Menu -- ");
+};
+
 function viewAllbyMgr() {
     inquirer.prompt({
         name: "selection",
