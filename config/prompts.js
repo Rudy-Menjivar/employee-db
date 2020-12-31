@@ -66,6 +66,20 @@ function viewAllbyMgr() {
         message: "View Employees by Manager:",
         choices: empChoices
     })
+    .then((answers) => {
+        var mgrId = getManagerID(answers.selection, empByMgr);
+        query = `SELECT id AS ID, CONCAT(first_name, ' ', last_name) AS EMPLOYEE_NAME FROM employee WHERE manager_id=${mgrId};`;
+        connection.query(query, function (err, res) {
+            if (err) throw err;
+            if (res.length === 0) {
+                console.log("")
+            }
+            else {
+                printTable(res);
+            }
+            mainMenu();
+        });
+    })
 };
 
 function addEmp(){
