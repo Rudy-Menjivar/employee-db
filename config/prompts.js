@@ -88,6 +88,11 @@ function engTeam() {
     renderResults();
 }
 
+function finTeam() {
+    query="SELECT CONCAT(employee.first_name, ' ', employee.last_name) AS 'Employee Name', role.title AS Title, department.name as Department, role.salary as Salary, CONCAT(mgr.first_name, ' ' ,mgr.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left join employee mgr on employee.manager_id = mgr.id WHERE department.name = 'Finance';"
+    renderResults();
+}
+
 function mgtList() {
     empChoices.push(" -- Main Menu -- ");
     connection.query("SELECT id, first_name, last_name FROM employee WHERE role_id BETWEEN 6 AND 7", function (err, res) {
