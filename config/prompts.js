@@ -65,6 +65,20 @@ function viewAllbyDept(){
     .then((answer) => { 
       switch (answer.deptName) {
         case "Engineering":
+          engTeam();
+          break;
+        case "Finance":
+          finTeam();
+          break;
+        case "Legal":
+          legalTeam();
+          break;
+        case "Management":
+          mgtTeam();
+          break;
+        case "Sales":
+          salesTeam();
+          break;
       }
     })
 }
