@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const { printTable } = require('console-table-printer');
 var connection = require("./connection.js");
 var query;
 
@@ -84,7 +85,7 @@ function updateEmpMgr(){
 function renderResults(){
     connection.query(query, function(err, res) {
         if (err) throw err;
-        console.table(res)
+        printTable(res)
         mainMenu();
     })
 };
