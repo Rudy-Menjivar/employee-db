@@ -51,7 +51,7 @@ function mainMenu() {
 };
 
 function viewAll(){
-    query = "SELECT employee.id, CONCAT(employee.first_name, ' ' ,employee.last_name) AS Employee_Name, role.title, department.department, role.salary, CONCAT(mgr.first_name, ' ' ,mgr.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left join employee mgr on employee.manager_id = mgr.id ORDER by employee.id ASC"
+    query = "SELECT employee.id AS ID, CONCAT(employee.first_name, ' ' ,employee.last_name) AS Employee_Name, role.title AS Title, department.department AS Department, role.salary AS Salary, CONCAT(mgr.first_name, ' ' ,mgr.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left join employee mgr on employee.manager_id = mgr.id ORDER by employee.id ASC"
     renderResults();
 };
 
