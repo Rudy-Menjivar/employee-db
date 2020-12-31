@@ -62,7 +62,12 @@ function viewAllbyDept(){
         message: "View Employees by Department:",
         choices: ["Engineering", "Finance", "Legal", "Management", "Sales"]
     })
-};
+    .then((answer) => { 
+      switch (answer.deptName) {
+        case "Engineering":
+      }
+    })
+}
 
 function mgtList() {
     empChoices.push(" -- Main Menu -- ");
