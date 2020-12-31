@@ -95,6 +95,12 @@ function viewAllbyMgr() {
     })
 };
 
+function getManagerID(selection, mgrName) {
+    if (selection === " -- Main Menu -- ") {
+        return mgrName.id = null;
+    }
+};
+
 function addEmp(){
     console.log("Under construction");
     mainMenu();
