@@ -31,6 +31,7 @@ function mainMenu() {
         viewAllbyDept();
         break;
       case "View All Employees by Manager":
+        mgtList();
         viewAllbyMgr();
         break;
       case "Add Employee":
