@@ -61,7 +61,13 @@ function viewAllbyDept(){
 
 function mgtList() {
     empChoices.push(" -- Main Menu -- ");
-    connection.query("SELECT id, first_name, last_name FROM employee WHERE role_id BETWEEN 6 AND 7")
+    connection.query("SELECT id, first_name, last_name FROM employee WHERE role_id BETWEEN 6 AND 7", function (err, res) {
+        res.forEach(function(arr) {
+            const empResults = { id: arr.id, first_name: arr.first_name, last_name: arr.last_name }
+            empByMgr.push(empResults)
+        })
+      if (err) throw err;
+    });
 };
 
 function viewAllbyMgr() {
