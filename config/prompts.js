@@ -61,6 +61,7 @@ function viewAllbyDept(){
 
 function mgtList() {
     empChoices.push(" -- Main Menu -- ");
+    connection.query("SELECT id, first_name, last_name FROM employee WHERE role_id BETWEEN 6 AND 7")
 };
 
 function viewAllbyMgr() {
