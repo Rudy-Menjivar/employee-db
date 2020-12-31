@@ -3,6 +3,7 @@ const { printTable } = require('console-table-printer');
 var connection = require("./connection.js");
 var query;
 var empChoices = [];
+var empByMgr = [];
 
 mainMenu();
 
