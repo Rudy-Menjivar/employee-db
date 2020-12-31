@@ -32,7 +32,7 @@ function mainMenu() {
         break;
       case "View All Employees by Manager":
         mgtList();
-        viewAllbyMgr();
+        setTimeout(viewAllbyMgr, 300);
         break;
       case "Add Employee":
         addEmp();
