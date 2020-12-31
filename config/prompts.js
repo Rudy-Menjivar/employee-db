@@ -99,6 +99,14 @@ function getManagerID(selection, mgrName) {
     if (selection === " -- Main Menu -- ") {
         return mgrName.id = null;
     }
+    else {
+    var splitSelection = selection.split(" ");
+        for (var i = 0; i < mgrName.length; i++) {
+            if (mgrName[i].first_name === splitSelection[0] && mgrName[i].last_name === splitSelection[1]) {
+                return mgrName[i].id;
+            }
+        }
+    }
 };
 
 function addEmp(){
