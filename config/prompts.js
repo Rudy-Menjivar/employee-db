@@ -142,6 +142,7 @@ function getManagerID(selection, mgrName) {
 };
 
 function addEmp() {
+  mgtList()
   inquirer
     .prompt([
       {
@@ -159,6 +160,12 @@ function addEmp() {
         type: "list",
         message: "What is the employee's title?",
         choices: ["Lawyer", "Software Engineer", "Accountant", "Manager", "Salesperson"]
+      },
+      {
+        name: "whatMgr",
+        type: "list",
+        message: "View Employees by Manager:",
+        choices: empChoices
       },
     ])
     .then(answers => {
