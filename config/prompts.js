@@ -154,6 +154,12 @@ function addEmp() {
         type: "input",
         message: "What is the employee's last name?",
       },
+      {
+        name: "whatRole",
+        type: "list",
+        message: "What is the employee's title?",
+        choices: ["Lawyer", "Software Engineer", "Accountant", "Manager", "Salesperson"]
+      },
     ])
     .then(answers => {
       console.log('Answers:', answers);
