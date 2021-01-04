@@ -164,7 +164,7 @@ function addEmp() {
       {
         name: "whatMgr",
         type: "list",
-        message: "View Employees by Manager:",
+        message: "Who is the employee's manager?",
         choices: empChoices
       },
     ])
