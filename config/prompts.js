@@ -141,9 +141,18 @@ function getManagerID(selection, mgrName) {
     }
 };
 
-function addEmp(){
-    console.log("Under construction");
-    mainMenu();
+function addEmp() {
+  inquirer
+    .prompt([
+      {
+        name: "firstName",
+        type: "input",
+        message: "What is the employee's first name?",
+      },
+    ])
+    .then(answers => {
+      console.log('Answers:', answers);
+    })
 };
 
 function removeEmp(){
