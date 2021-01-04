@@ -149,6 +149,11 @@ function addEmp() {
         type: "input",
         message: "What is the employee's first name?",
       },
+      {
+        name: "lastName",
+        type: "input",
+        message: "What is the employee's last name?",
+      },
     ])
     .then(answers => {
       console.log('Answers:', answers);
