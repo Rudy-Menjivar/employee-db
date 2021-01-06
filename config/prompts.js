@@ -94,7 +94,7 @@ function renderDept(answer) {
 };
 
 function mgtList() {
-    empChoices.push(" -- Main Menu -- ");
+    empChoices.push(" -- None -- ");
     connection.query("SELECT id, first_name, last_name FROM employee WHERE role_id BETWEEN 6 AND 7", function (err, res) {
         res.forEach(function(arr) {
             const empResults = { id: arr.id, first_name: arr.first_name, last_name: arr.last_name }
@@ -129,7 +129,7 @@ function viewAllbyMgr() {
 };
 
 function getManagerID(selection, mgrName) {
-    if (selection === " -- Main Menu -- ") {
+    if (selection === " -- None -- ") {
         return mgrName.id = null;
     }
     else {
