@@ -182,6 +182,7 @@ function addEmp() {
 };
 
 function getRoleID(answers, mgrId) {
+  var roleID = [];
 };
 
 function removeEmp(){
