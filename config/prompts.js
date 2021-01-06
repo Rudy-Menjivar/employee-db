@@ -146,47 +146,47 @@ function addEmp() {
   mgtList()
   connection.query(queryAllRoles, (err, results) => {
     if (err) throw err;
-  inquirer
-    .prompt([
-      {
-        name: "firstName",
-        type: "input",
-        message: "What is the employee's first name?",
-      },
-      {
-        name: "lastName",
-        type: "input",
-        message: "What is the employee's last name?",
-      },
-      {
-        name: "whatRole",
-        type: "list",
-        message: "What is the employee's title?",
-        choices: function() {
-          return results.map(role=>role.title)
-        }
-      },
-      {
-        name: "whatMgr",
-        type: "list",
-        message: "Who is the employee's manager?",
-        choices: empChoices
-      },
-    ])
-    .then(answers => {
-      console.log('Answers:', answers);
-      var mgrId = getManagerID(answers.whatMgr, empByMgr);
-      getRoleID(answers, mgrId);
-    })
+      inquirer
+        .prompt([
+          {
+            name: "firstName",
+            type: "input",
+            message: "What is the employee's first name?",
+          },
+          {
+            name: "lastName",
+            type: "input",
+            message: "What is the employee's last name?",
+          },
+          {
+            name: "whatRole",
+            type: "list",
+            message: "What is the employee's title?",
+            choices: function() {
+              return results.map(role=>role.title)
+            }
+          },
+          {
+            name: "whatMgr",
+            type: "list",
+            message: "Who is the employee's manager?",
+            choices: empChoices
+          },
+      ])
+      .then(answers => {
+        console.log('Answers:', answers);
+        var mgrId = getManagerID(answers.whatMgr, empByMgr);
+        getRoleID(answers, mgrId);
+      })
   })
 };
 
 function getRoleID(answers, mgrId) {
   var roleID = [];
   connection.query("SELECT id FROM role WHERE role.title = ?", [answers.whatRole], function (err, res) {
-      if (err) throw err;
-      roleID.push(answers.firstName, answers.lastName, res[0].id, mgrId)
-      console.log(roleID);
+    if (err) throw err;
+    roleID.push(answers.firstName, answers.lastName, res[0].id, mgrId)
+    console.log(roleID);
   })
 };
 
