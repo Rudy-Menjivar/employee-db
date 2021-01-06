@@ -183,6 +183,9 @@ function addEmp() {
 
 function getRoleID(answers, mgrId) {
   var roleID = [];
+  connection.query("SELECT id FROM role WHERE role.title = ?", [answers.whatRole], function (err, res) {
+      if (err) throw err;
+  })
 };
 
 function removeEmp(){
