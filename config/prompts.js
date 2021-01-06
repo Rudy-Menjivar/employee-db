@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const { printTable } = require('console-table-printer');
 var connection = require("./connection.js");
 var query;
+const queryAllRoles = `SELECT id, title FROM role`;
 var empChoices = [];
 var empByMgr = [];
 
@@ -143,6 +144,8 @@ function getManagerID(selection, mgrName) {
 
 function addEmp() {
   mgtList()
+  connection.query(queryAllRoles, (err, results) => {
+    if (err) throw err;
   inquirer
     .prompt([
       {
@@ -169,8 +172,9 @@ function addEmp() {
       },
     ])
     .then(answers => {
-      console.log('Answers:', answers);
+      console.log('Answers:', answers); 
     })
+  })
 };
 
 function removeEmp(){
