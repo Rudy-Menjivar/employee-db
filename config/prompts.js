@@ -162,7 +162,9 @@ function addEmp() {
         name: "whatRole",
         type: "list",
         message: "What is the employee's title?",
-        choices: ["Lawyer", "Software Engineer", "Accountant", "Manager", "Salesperson"]
+        choices: function() {
+          return results.map(role=>role.title)
+        }
       },
       {
         name: "whatMgr",
