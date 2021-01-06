@@ -176,9 +176,12 @@ function addEmp() {
     .then(answers => {
       console.log('Answers:', answers);
       var mgrId = getManagerID(answers.whatMgr, empByMgr);
-      console.log(mgrId)
+      getRoleID(answers, mgrId);
     })
   })
+};
+
+function getRoleID(answers, mgrId) {
 };
 
 function removeEmp(){
