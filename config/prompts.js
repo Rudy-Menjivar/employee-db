@@ -174,7 +174,6 @@ function addEmp() {
           },
       ])
       .then(answers => {
-        console.log('Answers:', answers);
         var mgrId = getManagerID(answers.whatMgr, empByMgr);
         getRoleID(answers, mgrId);
       })
@@ -182,19 +181,21 @@ function addEmp() {
 };
 
 function getRoleID(answers, mgrId) {
-  var roleID = [];
+  var empData = [];
   connection.query("SELECT id FROM role WHERE role.title = ?", [answers.whatRole], function (err, res) {
     if (err) throw err;
-    roleID.push(answers.firstName, answers.lastName, res[0].id, mgrId)
-    addEmpToDb(roleID);
+    empData.push(answers.firstName, answers.lastName, res[0].id, mgrId)
+    addEmpToDb(empData);
   })
 };
 
-function addEmpToDb(roleID) {
+function addEmpToDb(empData) {
   connection.query("INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?)",
-  [roleID], 
+  [empData], 
     function (err, res) {
       if (err) throw err;
+      console.log('*** Successfully added', empData[0], empData[1], 'to Database! ***');
+      setTimeout(mainMenu, 2000);
   })
 };
 
