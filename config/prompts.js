@@ -186,7 +186,15 @@ function getRoleID(answers, mgrId) {
   connection.query("SELECT id FROM role WHERE role.title = ?", [answers.whatRole], function (err, res) {
     if (err) throw err;
     roleID.push(answers.firstName, answers.lastName, res[0].id, mgrId)
-    console.log(roleID);
+    addEmpToDb(roleID);
+  })
+};
+
+function addEmpToDb(roleID) {
+  connection.query("INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?)",
+  [roleID], 
+    function (err, res) {
+      if (err) throw err;
   })
 };
 
