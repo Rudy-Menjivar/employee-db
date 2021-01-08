@@ -3,6 +3,7 @@ const { printTable } = require('console-table-printer');
 var connection = require("./connection.js");
 var query;
 const queryAllRoles = `SELECT id, title FROM role`;
+const empList =`SELECT employee.id, employee.first_name, employee.last_name, role.title AS Title, department.name AS 'Department Name', role.salary AS Salary, CONCAT(mgr.first_name, ' ' ,mgr.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left join employee mgr on employee.manager_id = mgr.id ORDER by employee.first_name ASC`;
 var empChoices = [];
 var empByMgr = [];
 
@@ -197,11 +198,6 @@ function addEmpToDb(empData) {
       console.log('*** Successfully added', empData[0], empData[1], 'to Database! ***');
       setTimeout(mainMenu, 2000);
   })
-};
-
-function removeEmp(){
-    console.log("Under construction");
-    mainMenu();
 };
 
 function updateEmpRole(){
