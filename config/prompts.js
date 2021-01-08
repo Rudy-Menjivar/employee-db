@@ -214,6 +214,12 @@ function removeEmp() {
             }
           },
       ])
+      .then(answers => {
+        connection.query('DELETE FROM employee WHERE id = ?', [answers.employeeId[0]+answers.employeeId[1]], (err, res) => {
+          if (err) throw err;
+          return res;
+          })
+      })
   })
 };
 
