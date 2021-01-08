@@ -226,8 +226,10 @@ function removeEmp() {
 };
 
 function updateEmpRole(){
-    console.log("Under construction");
-    mainMenu();
+  connection.query(empList, (err, res) => {
+    if (err) throw err;
+  })
+  mainMenu();
 };
 
 function updateEmpMgr(){
