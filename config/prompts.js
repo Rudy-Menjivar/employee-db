@@ -203,6 +203,14 @@ function addEmpToDb(empData) {
 function removeEmp() {
   connection.query(empList, (err, res) => {
     if (err) throw err;
+      inquirer
+        .prompt([
+          {
+            name: "employeeId",
+            type: "list",
+            message: "Which employee would you like to remove?",
+          },
+      ])
   })
 };
 
