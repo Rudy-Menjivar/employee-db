@@ -219,6 +219,8 @@ function removeEmp() {
           if (err) throw err;
           return res;
           })
+          console.log("\nRemoved employee with ID "+answers.employeeId+" from database\n")
+          setTimeout(mainMenu, 2000);
       })
   })
 };
