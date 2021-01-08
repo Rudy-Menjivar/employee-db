@@ -200,6 +200,12 @@ function addEmpToDb(empData) {
   })
 };
 
+function removeEmp() {
+  connection.query(empList, (err, res) => {
+    if (err) throw err;
+  })
+};
+
 function updateEmpRole(){
     console.log("Under construction");
     mainMenu();
