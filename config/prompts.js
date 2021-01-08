@@ -209,6 +209,9 @@ function removeEmp() {
             name: "employeeId",
             type: "list",
             message: "Which employee would you like to remove?",
+            choices: function() {
+              return res.map(employee=>employee.id + ' ' + employee.first_name +' '+ employee.last_name)
+            }
           },
       ])
   })
