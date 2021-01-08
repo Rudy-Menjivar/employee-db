@@ -195,7 +195,7 @@ function addEmpToDb(empData) {
   [empData], 
     function (err, res) {
       if (err) throw err;
-      console.log('*** Successfully added', empData[0], empData[1], 'to Database! ***');
+      console.log('\nSuccessfully added', empData[0], empData[1], 'to Database!\n');
       setTimeout(mainMenu, 2000);
   })
 };
