@@ -289,6 +289,9 @@ function updateEmpMgr() {
             choices: empChoices
           },
       ])
+      .then(answers => {
+        var mgrId = getManagerID(answers.whatMgr, empByMgr);
+      })
   })
 };
 
