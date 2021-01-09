@@ -4,6 +4,7 @@ var connection = require("./connection.js");
 var query;
 const queryAllRoles = `SELECT id, title FROM role`;
 const empList =`SELECT employee.id, employee.first_name, employee.last_name, role.title AS Title, department.name AS 'Department Name', role.salary AS Salary, CONCAT(mgr.first_name, ' ' ,mgr.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left join employee mgr on employee.manager_id = mgr.id ORDER by employee.first_name ASC`;
+var roles = [];
 var empChoices = [];
 var empByMgr = [];
 
