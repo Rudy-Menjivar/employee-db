@@ -226,7 +226,17 @@ function removeEmp() {
   })
 };
 
+function roleList() {
+  connection.query("SELECT id, title FROM role", (err, res) => {
+    if (err) throw err;
+    res.forEach((arr) => {
+      roles.push(`${arr.id} ${arr.title}`);
+      })
+  })
+};
+
 function updateEmpRole(){
+  roleList()
   connection.query(empList, (err, res) => {
     if (err) throw err;
       inquirer
