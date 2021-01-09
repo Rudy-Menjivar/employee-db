@@ -269,8 +269,9 @@ function updateEmpRole(){
 };
 
 function updateEmpMgr(){
-    console.log("Under construction");
-    mainMenu();
+  connection.query(empList, (err, res) => {
+    if (err) throw err;
+  })
 };
 
 function renderResults(){
