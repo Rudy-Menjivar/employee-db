@@ -239,6 +239,12 @@ function updateEmpRole(){
               return res.map(employee=>employee.id + ' ' + employee.first_name +' '+ employee.last_name)
             }
           },
+          {
+            name: "roleId",
+            type: "list",
+            message: "What role would you like to assign?",
+            choices: roles
+          },
       ])
   })
 };
