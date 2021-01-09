@@ -256,6 +256,15 @@ function updateEmpRole(){
             choices: roles
           },
       ])
+      .then(answers => {
+        connection.query('UPDATE employee SET role_id = ? WHERE id = ?', 
+        [answers.roleId[0], answers.employeeId[0]+answers.employeeId[1]], (err, res) => {
+          if (err) throw err;
+          return res;
+        })
+        console.log("\nUpdated employee role for "+answers.employeeId+"\n")
+        setTimeout(mainMenu, 2000);
+      })
   })
 };
 
