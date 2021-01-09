@@ -291,6 +291,12 @@ function updateEmpMgr() {
       ])
       .then(answers => {
         var mgrId = getManagerID(answers.whatMgr, empByMgr);
+        connection.query('UPDATE employee SET manager_id = ? WHERE id = ?',
+        [mgrId, answers.employeeId[0]+answers.employeeId[1]], (err, res) => {
+          if (err) throw err;
+          console.log(answers.employeeId)
+          return res;
+        })
       })
   })
 };
