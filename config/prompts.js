@@ -282,6 +282,12 @@ function updateEmpMgr() {
               return res.map(employee=>employee.id + ' ' + employee.first_name +' '+ employee.last_name)
             }
           },
+          {
+            name: "whatMgr",
+            type: "list",
+            message: "Which of the following managers will this employee report to?",
+            choices: empChoices
+          },
       ])
   })
 };
