@@ -268,7 +268,8 @@ function updateEmpRole(){
   })
 };
 
-function updateEmpMgr(){
+function updateEmpMgr() {
+  mgtList();
   connection.query(empList, (err, res) => {
     if (err) throw err;
       inquirer.
