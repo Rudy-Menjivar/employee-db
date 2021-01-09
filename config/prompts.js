@@ -228,8 +228,18 @@ function removeEmp() {
 function updateEmpRole(){
   connection.query(empList, (err, res) => {
     if (err) throw err;
+      inquirer
+        .prompt([
+          {
+            name: "employeeId",
+            type: "list",
+            message: "Which employee's role would you like to update?",
+            choices: function() {
+              return res.map(employee=>employee.id + ' ' + employee.first_name +' '+ employee.last_name)
+            }
+          },
+      ])
   })
-  mainMenu();
 };
 
 function updateEmpMgr(){
