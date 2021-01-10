@@ -21,7 +21,7 @@ Employee-db is an easy to use CLI application for anyone to interact with and ma
 * [Questions](#questions)
 
 ## Video-Demo
-<a href="https://drive.google.com/file/d/1IPAS4arbrdidgVSikwsmyykH3chVM_FM/view" target="_blank"><img src="assets/splashScreen.png" 
+<a href="https://drive.google.com/file/d/1IPAS4arbrdidgVSikwsmyykH3chVM_FM/view"><img src="assets/splashScreen.png" target="_blank"
 alt="EmployeeDb CLI Application" width="640" height="480" border="0" /></a>
 
 ## Installation
