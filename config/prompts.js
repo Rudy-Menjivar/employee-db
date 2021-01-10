@@ -96,15 +96,15 @@ function renderDept(answer) {
 };
 
 function mgtList() {
-    empChoices.push(" -- None -- ");
-    connection.query("SELECT id, first_name, last_name FROM employee WHERE role_id BETWEEN 6 AND 7", function (err, res) {
-        res.forEach(function(arr) {
-            const empResults = { id: arr.id, first_name: arr.first_name, last_name: arr.last_name }
-            empByMgr.push(empResults)
-            empChoices.push(`${arr.first_name} ${arr.last_name}`);
-        })
-      if (err) throw err;
-    });
+  empChoices.push(" -- None -- ");
+  connection.query("SELECT id, first_name, last_name FROM employee WHERE role_id BETWEEN 6 AND 7", function (err, res) {
+    res.forEach(function(arr) {
+      const empResults = { id: arr.id, first_name: arr.first_name, last_name: arr.last_name }
+      empByMgr.push(empResults)
+      empChoices.push(`${arr.first_name} ${arr.last_name}`);
+  })
+    if (err) throw err;
+  });
 };
 
 function viewAllbyMgr() {
