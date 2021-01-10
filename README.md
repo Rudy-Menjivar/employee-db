@@ -10,7 +10,7 @@ Employee-db is an easy to use CLI application for anyone to interact with and ma
 
 * [GitHub Repository](https://github.com/Rudy-Menjivar/employee-db/)
 
-* [Demo](https://drive.google.com/file/d/1IPAS4arbrdidgVSikwsmyykH3chVM_FM/view)
+* [Demo](#video-demo)
 
 * [Installation](#installation)
 
@@ -19,6 +19,10 @@ Employee-db is an easy to use CLI application for anyone to interact with and ma
 * [Contributing](#contributing)
 
 * [Questions](#questions)
+
+## Video-Demo
+<a href="https://drive.google.com/file/d/1IPAS4arbrdidgVSikwsmyykH3chVM_FM/view" target="_blank"><img src="assets/splashScreen.png" 
+alt="EmployeeDb CLI Application" width="640" height="480" border="0" /></a>
 
 ## Installation
 
