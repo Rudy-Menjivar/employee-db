@@ -70,4 +70,6 @@ Licensed under the [MIT](./LICENSE.txt) license.
 
 ## Questions
   
-If you have any questions, then feel free to contact me at rudy.menjivar@gmail.com. You may also access my complete work at [GitHub](https://github.com/Rudy-Menjivar).
+If you have any questions then feel free to contact me, and you can find my complete work at GitHub.
+- [Email](mailto:rudy.menjivar@gmail.com)
+- [GitHub](https://github.com/Rudy-Menjivar)
