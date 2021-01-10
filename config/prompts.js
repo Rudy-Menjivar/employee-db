@@ -303,9 +303,9 @@ function updateEmpMgr() {
 };
 
 function renderResults(){
-    connection.query(query, function(err, res) {
-        if (err) throw err;
-        printTable(res)
-        mainMenu();
-    })
+  connection.query(query, function(err, res) {
+    if (err) throw err;
+    printTable(res)
+    setTimeout(mainMenu, 2000);
+  })
 };
