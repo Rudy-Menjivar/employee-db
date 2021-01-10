@@ -88,11 +88,11 @@ function viewAllbyDept(){
 
 // Returns employee data that match department that's selected with the use of placeholder value
 function renderDept(answer) {
-    connection.query("SELECT CONCAT(employee.first_name, ' ', employee.last_name) AS 'Employee Name', role.title AS Title, department.name as Department, role.salary as Salary, CONCAT(mgr.first_name, ' ' ,mgr.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left join employee mgr on employee.manager_id = mgr.id WHERE department.name = ?", [answer.deptName], function (err, res) {
-        if (err) throw err;
-        printTable(res)
-        mainMenu();
-    })
+  connection.query("SELECT CONCAT(employee.first_name, ' ', employee.last_name) AS 'Employee Name', role.title AS Title, department.name as Department, role.salary as Salary, CONCAT(mgr.first_name, ' ' ,mgr.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left join employee mgr on employee.manager_id = mgr.id WHERE department.name = ?", [answer.deptName], function (err, res) {
+    if (err) throw err;
+    printTable(res)
+    setTimeout(mainMenu, 2000);
+  })
 };
 
 function mgtList() {
