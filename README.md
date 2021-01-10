@@ -10,6 +10,8 @@ Employee-db is an easy to use CLI application for anyone to interact with and ma
 
 * [GitHub Repository](https://github.com/Rudy-Menjivar/employee-db/)
 
+* [Demo](https://drive.google.com/file/d/1IPAS4arbrdidgVSikwsmyykH3chVM_FM/view)
+
 * [Installation](#installation)
 
 * [Usage](#usage)
@@ -30,7 +32,7 @@ npm install
 
 Run this command to invoke this application:
 ```
-npm start
+node server.js
 ```
   
 
