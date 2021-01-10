@@ -9,7 +9,15 @@ var roles = [];
 var empChoices = [];
 var empByMgr = [];
 
-mainMenu();
+init();
+
+function init() {
+  const splashScreen = logo({ name: "Employee-DB" }).render();
+
+  console.log(splashScreen);
+  
+  mainMenu();
+}
 
 function mainMenu() {
   inquirer.prompt({
